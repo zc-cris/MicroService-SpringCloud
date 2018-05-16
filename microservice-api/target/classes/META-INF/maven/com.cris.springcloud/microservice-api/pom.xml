@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 子模块需要显示声明，才能有明确的继承表现，依赖默认使用父工程定义，除非自己明确定义 -->
+	<parent>
+		<groupId>com.cris.springcloud</groupId>
+		<artifactId>microservicecloud</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<!-- 当前子模块的名字 -->
+	<artifactId>microservice-api</artifactId>
+
+	<dependencies>
+		<!-- 当前Module需要用到的jar包，按自己需求添加，如果父类包含了，可以不用写版本号 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
