@@ -22,3 +22,19 @@ spring:
       initial-size: 5                                   # 数据库连接池初始化连接数
       max-wait-millis: 200                              # 等待获取连接的最大超时时间
       
+eureka:
+  client: # eureka 客户端注册进eureka 服务列表内
+    service-url:
+#      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #我们自己的服务中心地址
+  instance:
+    instance-id: microservicecloud-dept8001   # 显示在服务中心界面的服务名称（简洁明了）
+    prefer-ip-address: true                   #注册到服务中心使用ip进行注册（服务名称显示的ip详情）
+    
+info:
+  app.name: cris-microservicecloud
+  company.name: www.cris.com
+  app.programmer: zc-cris
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+    

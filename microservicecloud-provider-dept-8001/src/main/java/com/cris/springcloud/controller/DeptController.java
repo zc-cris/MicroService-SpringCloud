@@ -3,6 +3,8 @@ package com.cris.springcloud.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +36,24 @@ public class DeptController {
     @GetMapping("/dept/list")
     public List<Dept> list() {
         return service.list();
+    }
+    
+    // 对外暴露提供服务信息的客户端，方便服务发现
+    @Autowired
+    private DiscoveryClient discoveryClient;
+    
+    @GetMapping("/dept/discovery")
+    public Object discovery() {
+        List<String> services = discoveryClient.getServices();
+        System.out.println("-----------" + services);
+        services.forEach(System.out::println);
+        
+        List<ServiceInstance> instances = discoveryClient.getInstances("MICROSERVICECLOUD-DEPT");
+        for (ServiceInstance serviceInstance : instances) {
+            System.out.println(serviceInstance.getServiceId()+"\t"+serviceInstance.getHost()+"\t"+serviceInstance.getPort()+"\t"+serviceInstance.getUri());
+        }
+        return this.discoveryClient;
+        
     }
 
 }
