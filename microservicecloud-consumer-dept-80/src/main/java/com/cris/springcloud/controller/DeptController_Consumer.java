@@ -18,7 +18,10 @@ public class DeptController_Consumer {
     @Autowired
     private RestTemplate restTemplate;
     
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+//    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    // 通过微服务提供模块的微服务名字来进行访问（使用Ribbon 负载均衡和Eureka 集群）
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";  
+    
     
     @PostMapping("/consumer/dept/save")
  // 这里如果不用@RequestBody注解，那么前台发送过来的数据不能是json 格式，否则无法解析
