@@ -127,5 +127,10 @@
 		<module>microservicecloud-eureka-7003</module>
 		<module>microservicecloud-provider-dept-8002</module>
 		<module>microservicecloud-provider-dept-8003</module>
+		<module>microservicecloud-consumer-dept-feign</module>
+		<module>microservicecloud-provider-hystrix-dept-8001</module>
+		<module>microservicecloud-consumer-hystrix-dashboard</module>
+		<module>microservicecloud-zull-gateway-9527</module>
+		<module>microservicecloud-config-3344</module>
 	</modules>
 </project>

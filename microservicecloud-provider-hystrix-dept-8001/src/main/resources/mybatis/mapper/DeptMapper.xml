@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cris.springcloud.dao.DeptMapper">
+
+  <select id="getDeptById" resultType="Dept" parameterType="int">
+    select id,name,db_source from dept where id = #{id};
+  </select>
+  
+  <select id="listDepts" resultType="Dept">
+  	select id,name,db_source from dept;
+  </select>
+  
+  <insert id="saveDept" parameterType="Dept">
+  	insert into dept(name, db_source) values (#{name}, DATABASE());
+  </insert>
+  
+</mapper>

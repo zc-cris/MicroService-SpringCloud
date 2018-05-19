@@ -1,0 +1,11 @@
+server:
+  port: 3344
+  
+spring:
+  application:
+    name: microservicecloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:zc-cris/springcloud_server_config_demo.git    #github上的仓库名字

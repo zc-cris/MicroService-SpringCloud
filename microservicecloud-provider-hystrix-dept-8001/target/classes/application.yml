@@ -1,0 +1,40 @@
+server:
+  port: 8001    # 端口设置    
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml    # mybatis总配置文件所在目录
+  type-aliases-package: com.cris.springcloud.entity     # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                   # mapper映射文件所在路径
+  
+spring:
+  application:
+    name: microservicecloud-dept                        # 注册到Eureka 以及对外暴露的微服务名字（重要）              
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource        # 当前数据源操作类型（Druid）
+    driver-class-name: org.gjt.mm.mysql.Driver          # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB01          # 连接的数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5                                       # 数据库连接池的最小维持连接数
+      max-total: 5                                      # 数据库连接池最大连接数
+      initial-size: 5                                   # 数据库连接池初始化连接数
+      max-wait-millis: 200                              # 等待获取连接的最大超时时间
+      
+eureka:
+  client: # eureka 客户端注册进eureka 服务列表内
+    service-url:
+#      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  #我们自己的服务中心地址
+  instance:
+    instance-id: microservicecloud-dept8001-hystrix   # 自定义显示在服务中心界面的使用了hystrix 组件的服务名称（简洁明了）
+    prefer-ip-address: true                   #注册到服务中心使用ip进行注册（服务名称显示的ip详情）
+    
+info:
+  app.name: cris-microservicecloud
+  company.name: www.cris.com
+  app.programmer: zc-cris
+  build.artifactId: microservicecloud-provider-hystrix-dept-8001
+  build.version: 0.0.1-SNAPSHOT
+    
