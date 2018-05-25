@@ -1,5 +1,5 @@
 # MicroService-SpringCloud
-## 关于初入SpringCloud 坑的一个实现案例，从零搭建到完成
+## 关于SpringCloud 实现微服务架构的经典整合案例，从零搭建到完成
 
 #### 1. 环境准备：
   Eclipse:Oxygen.3 Release (4.7.3)<br>
@@ -13,7 +13,7 @@
   Mybatis + druid + Lombok(模板代码自动生成插件) + SpringCloud（Eureka，Ribbon，Feign，Hystrix，Zuul，Config）+SpringBoot
   
 ### 案例目的：
-  主要是为了学习SpringCloud，一步一步搭建起来一个微服务的架构，熟悉SpringCloud 家族中的五大神兽，先上手混个脸熟，然后再琢磨，
+  主要学习SpringCloud 过程中，一步一步搭建起来一个微服务的架构，基于 SpringCloud 家族中的五大神兽。
   搭建过程中还是遇上了一些坑的，但是都总结在了案例文档里，如果感兴趣的同学可以参考，目前SpringCloud 还不是很广为人知，感兴趣的
   同学可以加入SpringCloud 的中国社区：http://springcloud.cn/
   
@@ -31,10 +31,11 @@
   5. 集成Hystrix 组件并上手HystrixDashBoard（重点）
   6. 集成Zuul 组件
   7. 集成Config 组件
+  8. 
   
 ### 个人建议
    该案例作为初入SpringCloud 坑的同学可能比较友好，因为提供了完整的构建流程文档，并且注释也是比较详细，如果有微服务开发经验的同学非常快就
-   可以理解。如果是大牛，欢迎指出错误
+   可以理解。同时基于IDEA 开发的第二个springcloud 微服务案例已经在开发中，欢迎大家pull 学习
    
 
   
